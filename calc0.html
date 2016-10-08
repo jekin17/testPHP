@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Calc</title>
+	<script type='text/javascript' src='jquery-3.1.1.js'></script>
+</head>
+<body>
+
+<table width="30%"  border="5" align = "center" cellspacing="10" cellpadding ="10">
+   <caption align="center" valign=button">
+     Калькулятор
+   </caption>
+	<tbody align="center"  top =>
+		<tr> 
+			<td>
+				<input type="text"  placeholder="firstOperand" id="num1" />	<p>
+				<input type="text" placeholder="operation" id="op" /><p>
+				<input type="text" placeholder="secondOperand" id="num2" /><p>
+				<input type="text" placeholder="result"id="res" /><p>
+				<input type="button" id="b1" value="calc" style = "width:100px; height:35px"/>
+			</td>
+		</tr>
+</table>
+</body>
+<script>
+	$(function() {
+		//alert ('jQuery подключен и отлично работает!');
+	});
+</script>
+
+<script>
+	$('#b1').click(function(){
+		$.ajax({
+			type: "POST",
+			url: "calc.php",
+			data: {'num1': $('#num1').val(), 'op': $('#op').val(), 'num2': $('#num2').val()},
+			success: function (data) {
+				$('#res').val(data);
+			}
+		})
+	});
+</script>

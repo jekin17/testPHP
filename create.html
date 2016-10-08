@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>MySQL-PHP</title>
+		<style type="text/css">
+			table {
+				width: 750px;
+				margin: auto;
+				background-color: lightblue;				
+			}
+			th, td {
+				height: 20px;
+				text-align: center;				
+			}
+		</style>
+	</head>
+
+	<body>
+		<?php
+			include ("config.php");
+		?>
+		<fieldset>
+			<legend>CREATING ITEM</legend>
+			<form name="mysql-php" action="crud.php" method="POST">
+				
+				<table>
+					<caption><b>Database Actions</b></caption>
+					<thead>
+						<tr>
+							<th></th>
+						</tr>
+						<tr>
+							<th><label for="id">ID</label></th>
+							<th><label for="fname">First name</label></th>
+							<th><label for="lname">Last name</label></th>
+							<th><label for="age">Age</label></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><input type="number" name="id" placeholder="ID" id="id"></td>
+							<td><input type="text" name="fname" placeholder="First name" id="fname"></td>
+							<td><input type="tetx" name="lname" placeholder="Last name" id="lname"></td>
+							<td><input type="number" name="age" placeholder="Age" id="age"></td>
+						</tr>
+									
+					</tbody>
+					<tfoot></tfoot>
+				</table>
+
+				<table>
+					<thead></thead>
+					<tbody>
+						<tr>
+							<td></td>						
+						</tr>
+						<tr>
+							<td width="15%"></td>
+							<td width="15%"></td>
+							<td width="10%"><input type="submit" name="submit" value="Create"></td>
+							<td width="10%"><input type="submit" name="submit" value="Read"></td>
+							<td width="10%"><input type="submit" name="submit" value="Update"></td>
+							<td width="10%"><input type="submit" name="submit" value="Delete"></td>
+							<td width="15%"></td>
+							<td width="15%"></td>
+						</tr>
+						<tr>
+							<td></td>						
+						</tr>
+					</tbody>
+					<tfoot></tfoot>
+				</table>
+			</form>
+		</fieldset>
+	</body>
+
+</html>

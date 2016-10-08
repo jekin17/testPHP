@@ -1,0 +1,55 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Калькулятор</title>
+</head>
+<body>
+
+<table width="30%"  border="5" align = "center" cellspacing="10" cellpadding ="10">
+    <caption align="center" valign=button">
+
+    </caption>
+    <tbody align="center"  top =>
+    <tr>
+        <td>-
+            <form method="GET" action="calc.php">
+            <input type="num1"  />
+            <input type="op"    />
+            <input type="num2"  />
+            <input type="res"   />
+            <input type="submit" />
+            </form>
+        </td>
+    </tr>
+</table>
+
+<?php
+
+$n1 = $_REQUEST['num1'];
+$n2 = $_REQUEST['num2'];
+$op = $_REQUEST['op'];
+$res = 0;
+if($op == "+")
+{
+    $res = $n1 + $n2;
+}
+else if($op == "-")
+{
+    $res = $n1 - $n2;
+}
+else if($op == "*")
+{
+    $res = $n1 * $n2;
+}
+else if($op == "/")
+{
+    $res = $n1 / $n2;
+}
+echo   $res;
+?>
+</body>
+</html>
